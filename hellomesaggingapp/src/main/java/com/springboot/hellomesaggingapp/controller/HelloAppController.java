@@ -25,10 +25,14 @@ public class HelloAppController {
     public String deleteHello() {
         return "Hello from BridgeLabz (DELETE)";
     }
-
+    //pass name as query parameter
     @GetMapping("/query")
     public String helloWithName(@RequestParam String name) {
         return "Hello " + name + " from BridgeLabz";
     }
-
+    //pass name as path variable
+    @GetMapping("/param/{name}")
+    public String helloWithPath(@PathVariable String name) {
+        return "Hello " + name + " from BridgeLabz";
+    }
 }
