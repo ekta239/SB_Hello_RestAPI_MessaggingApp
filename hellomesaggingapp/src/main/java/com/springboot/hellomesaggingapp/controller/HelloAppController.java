@@ -25,4 +25,10 @@ public class HelloAppController {
     public String deleteHello() {
         return "Hello from BridgeLabz (DELETE)";
     }
+
+    @GetMapping("/query")
+    public String helloWithName(@RequestParam String name) {
+        return "Hello " + name + " from BridgeLabz";
+    }
+
 }
