@@ -37,7 +37,12 @@ public class HelloAppController {
     }
     //pass first and last name in the body and show output
     @PostMapping("/post")
-    public String hellowithuser(@RequestBody UserDto user) {
+    public String helloWithUser(@RequestBody UserDto user) {
         return "Hello " + user.getFirstname() +" "+ user.getLastname()+ " from BridgeLabz";
+    }
+
+    @PutMapping("/put/{firstName}")
+    public String sayHello(@PathVariable String firstName, @RequestParam String lastName) {
+        return "Hello " + firstName + " " + lastName + " from BridgeLabz";
     }
 }
