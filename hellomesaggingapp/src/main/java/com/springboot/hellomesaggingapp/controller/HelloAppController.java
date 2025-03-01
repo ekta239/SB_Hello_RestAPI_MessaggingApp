@@ -35,4 +35,9 @@ public class HelloAppController {
     public String helloWithPath(@PathVariable String name) {
         return "Hello " + name + " from BridgeLabz";
     }
+    //pass first and last name in the body and show output
+    @PostMapping("/post")
+    public String hellowithuser(@RequestBody UserDto user) {
+        return "Hello " + user.getFirstname() +" "+ user.getLastname()+ " from BridgeLabz";
+    }
 }
